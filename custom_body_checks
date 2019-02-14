@@ -1,0 +1,10 @@
+/unsubscribe.php/ REJECT Spam
+/descadastro\/M/ REJECT Spam
+/sair.php/ REJECT Spam
+/image\/\.jpg/ REJECT Spam
+/url\/M/ REJECT Spam
+/display.php\?M/ REJECT Spam
+/abrir\/M/ REJECT Spam
+/link.php\?M/ REJECT Spam
+/open.php/ REJECT Spam
+/descadastrar_email.php/ REJECT Spam

@@ -1,0 +1,4 @@
+/filename=\"?(.*)\.(asd|bat|chm|cmd|com|dll|do|exe|hlp|hta|js|jse|lnk|mov|ocx|pif|reg|rm|scr|shb|shm|shs|vbe|vbs|vbx|vxd|wav|wsf|wsh|xl|jar)\"?$/
+        REJECT Por razões de segurança, rejeitamos este tipo de arquivo em anexo
+/^\s*Content-(Disposition|Type).*name\s*=\s*"?(.+\.(asd|bat|chm|cmd|com|dll|do|exe|hlp|hta|js|jse|lnk|mov|ocx|pif|reg|rm|scr|shb|shm|shs|vbe|vbs|vbx|vxd|wav|wsf|wsh|xl|jar))"?\s*$/
+        REJECT Anexo nao aceito. Arquivo "$2" nao tem uma extencao aceita "$3"

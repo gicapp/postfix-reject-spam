@@ -1,0 +1,14 @@
+# Adicionar/ajustar as linhas do main.cf no Postfix.
+# Esta configuração é testada para a versão 3 em diante, mas provavelmente funciona nas anteriores, requer TESTE!
+
+#### Início dos parâmetros de configuração:
+
+smtpd_recipient_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination reject_rbl_client zen.spamhaus.org reject_rbl_client dnsbl.spfbl.net
+header_checks = pcre:/local-do-arquivo/postfix/extencoes_header_checks,regexp:/local-do-arquivo/postfix/header_checks
+body_checks = regexp:/local-do-arquivo/postfix/custom_body_checks
+
+#### Fim dos parâmetros de configuração
+
+# aqui especifiquei algumas RBLs de exemplo, como SPAMHAUS e SPFBL (verifique em https://spfbl.net/ as condições de uso), particularmente essas duas já reduzem uma boa quantidade de SPAM, mas existem várias outras possíveis.
+# além disso, header_checks, verificam extenções dos anexos e header_checks, informações de cabeçalho dos e-mails, muitos SPAMs já podem ser barrados antes da entrega, economizando banda, CPU e armazenamento.
+# Por fim o body_checks, verifica o conteúdo no corpo do e-mail.

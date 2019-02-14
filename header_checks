@@ -1,0 +1,7 @@
+# Importante entender se a linha é aplicável à sua situação.
+# No primeiro exemplo, com o OK, temos um domínio que estaria em whitelist e os demais com REJECT.
+
+/(.*)dhl\.com$/                 OK
+/(.*)dominio\.com\.br$/ REJECT SPAM
+/^List-Unsubscribe */   REJECT SPAM
+/^X-Original-From */    REJECT SPAM
